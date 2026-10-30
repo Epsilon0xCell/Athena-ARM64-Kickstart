@@ -16,6 +16,7 @@ on:
       - 'v*-arm64'
       - 'v*-aarch64'
 
+# I pin the Fedora version and the ISO name once here so the build step, the checksum step, and the release step cannot disagree about them.
 env:
   FEDORA_VERSION: ${{ github.event.inputs.fedora_version || '42' }}
   ISO_NAME: athenaos-live-aarch64.iso
@@ -35,6 +36,7 @@ jobs:
           sudo apt-get install -y wget curl qemu-user-static
           docker --version
       
+      # I build on an Ubuntu runner and let the Fedora container run as linux/arm64. The runner itself is x86, so the ARM64 side comes from the container platform line and the qemu-user-static package installed above, not from the runner hardware.
       - name: Build ISO using Docker
         run: |
           echo "🏗️ Starting ARM64 ISO build..."
@@ -114,6 +116,7 @@ jobs:
           echo "🧹 Cleaning up Docker resources..."
           docker system prune -f || true
       
+      # I check for the ISO by its exact name here instead of trusting the build step on its own, because a finished build run can still leave no ISO in the results directory.
       - name: Verify ISO was created
         run: |
           echo "🔍 Checking for created ISO..."

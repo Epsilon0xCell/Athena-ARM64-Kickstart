@@ -13,6 +13,7 @@ on:
 jobs:
   validate:
     name: Validate ARM64 Configuration
+    # This runs on a Mac runner because the system information step below uses sw_vers. The kickstart checks themselves are plain grep with no kickstart parser installed, so they prove the ARM64 pieces are present in the file. They do not prove the file parses.
     runs-on: macos-latest
     
     steps:

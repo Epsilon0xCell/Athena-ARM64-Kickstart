@@ -10,11 +10,15 @@ xconfig --startxonboot
 zerombr
 clearpart --all
 # ARM64/UEFI boot configuration
+# I added this EFI system partition for the ARM64 port. The ARM64 machines I target boot through UEFI only, so there is no legacy BIOS path in this file and the firmware needs this partition to find the bootloader.
 part /boot/efi --size 512 --fstype efi
 part / --size 5120 --fstype ext4
+# I keep the kernel arguments in this one append line, and the same set is repeated in the GRUB defaults written in %post below. If I change one place and not the other, the two boot paths stop matching.
 bootloader --location=mbr --append="quiet loglevel=3 audit=0 nvme_load=yes zswap.enabled=0 fbcon=nodefer tmpfs.size=4096m nowatchdog"
+# I leave sshd disabled in the live environment. Nothing in this image needs to accept incoming SSH, and I do not want a live session reachable from the network by default.
 services --enabled=NetworkManager,qemu-guest-agent --disabled=sshd
 network --bootproto=dhcp --device=link --activate
+# I lock the root account instead of setting a root password. Admin work in the live session goes through the live user and sudo, not through a root login.
 rootpw --lock --iscrypted locked
 shutdown
 
@@ -66,6 +70,7 @@ alsa-sof-firmware
 cracklib-dicts # passwd policy checks
 dhcpcd
 dialog
+# I use the aa64 GRUB and shim packages here. The x86 boot packages from the original file do not exist for this architecture, so this group is the heart of the ARM64 port.
 grub2-efi-aa64
 grub2-efi-aa64-modules
 grub2-tools
@@ -567,6 +572,7 @@ gpgkey=https://packages.microsoft.com/fedora/\$releasever/prod/repodata/repomd.x
 EOF
 
 
+# I give the wheel group passwordless sudo here because the live account uses the known live password set in this file. That trade only makes sense on live media. I would not carry this line into an installed system.
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/g_wheel
 chmod 0440 /etc/sudoers.d/g_wheel
 
