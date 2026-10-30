@@ -1,6 +1,6 @@
 ![Banner](banner.png)
 
-# athena-arm-iso
+# Athena-ARM64-Kickstart
 
 Athena OS Live ISO configuration for ARM64 (aarch64) architecture.
 
