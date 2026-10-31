@@ -547,6 +547,16 @@ PROMPT_COMMAND='set_bash_prompt'
 EOF
 
 
+# Signature checking is off in the athenaos.repo file written
+# below, and I want the reason on record next to the setting.
+# This kickstart does not ship an RPM GPG key for the Athena
+# COPR repo, and the repo file below has no gpgkey line at all.
+# Nothing else in this file writes key material that dnf could
+# use, so turning gpgcheck on here would make dnf reject
+# packages from this repo until the right RPM key is identified
+# and shipped with the image. The cost is plain: packages
+# pulled from this repo are not signature checked. If that key
+# is ever added, both zero lines below should be turned on.
 # athenaos.repo
 cat > /etc/yum.repos.d/athenaos.repo <<EOF
 [athenaos]
@@ -560,6 +570,14 @@ enabled=1
 enabled_metadata=1
 EOF
 
+# Signature checking is off in the microsoft.repo file written
+# below too. The gpgkey line inside that file names the
+# Microsoft key, but dnf ignores that key while gpgcheck and
+# repo_gpgcheck are set to 0, so packages from this repo are
+# not signature checked as written. I keep the key line in the
+# file so the check can be turned on by changing the two zeros,
+# and I keep the reason here so the zeros do not read as a
+# default nobody chose.
 # microsoft.repo
 cat > /etc/yum.repos.d/microsoft.repo <<EOF
 [microsoft-fedora]
