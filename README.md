@@ -59,10 +59,19 @@ This configuration targets modern ARM64 systems with UEFI firmware. Legacy BIOS 
 This repository includes automated CI/CD workflows:
 
 - **Build and Release**: Complete ARM64 ISO build with automatic GitHub releases
-- **Validation**: Quick syntax and configuration validation
+- **Validation**: Grep-based configuration checks on the kickstart file (not a kickstart parser, so it proves the ARM64 pieces are present, not that the file parses)
 - **Cross-platform**: Uses Docker and QEMU for ARM64 builds on x86 runners
 
 See [`.github/workflows/README.md`](.github/workflows/README.md) for detailed workflow documentation.
+
+Scope note for this pass: no ISO was built here and no workflow was
+run live. The workflow documentation was corrected to match the two
+workflow files actually in this repo, and the kickstart checks below
+were verified by reading the files: the EFI partition and the
+grub2-efi-aa64 packages are present, no syslinux, VirtualBox guest, or
+VMware guest package string remains in the kickstart, and the kernel
+arguments in the bootloader line match the GRUB defaults written in
+the %post section.
 
 ## Repository Support
 
