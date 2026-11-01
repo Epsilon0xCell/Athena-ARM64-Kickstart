@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 30" role="img" aria-label="Short brayer stroke separator">
+  <rect width="900" height="30" fill="#f3ead6"/>
+  <rect id="ink-stroke" x="330" y="10" width="240" height="9" fill="#26407c"/>
+  <g id="small-roller">
+    <rect x="-5" y="2" width="10" height="26" rx="4" fill="#c69434"/>
+    <animateTransform attributeName="transform" type="translate" values="330 0;570 0;330 0" dur="9s" repeatCount="indefinite"/>
+  </g>
+</svg>

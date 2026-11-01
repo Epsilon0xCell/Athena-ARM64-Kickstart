@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40" role="img" aria-label="Full brayer separator">
+  <rect width="900" height="40" fill="#f3ead6"/>
+  <rect id="ink-band" x="0" y="14" height="12" fill="#26407c">
+    <animate attributeName="width" values="0;900;900" keyTimes="0;0.72;1" dur="7s" repeatCount="indefinite"/>
+  </rect>
+  <g id="brayer-roller">
+    <rect x="-6" y="4" width="12" height="32" rx="5" fill="#c69434"/>
+    <circle cx="0" cy="20" r="4" fill="#26407c"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0;900 0;900 0" keyTimes="0;0.72;1" dur="7s" repeatCount="indefinite"/>
+  </g>
+</svg>

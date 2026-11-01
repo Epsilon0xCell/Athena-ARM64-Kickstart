@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-label="Charcoal kiln yard, animated scene">
+  <rect width="900" height="220" fill="#f3ead6"/>
+  <g id="far-band">
+    <g id="willow-canopy" stroke="#6e8a4a" stroke-width="3" fill="none">
+      <path d="M60 92 q6 -52 -6 -84"><animateTransform attributeName="transform" type="rotate" values="-1.6 60 92;1.6 60 92;-1.6 60 92" dur="8s" repeatCount="indefinite"/></path>
+      <path d="M120 92 q-6 -48 8 -80"><animateTransform attributeName="transform" type="rotate" values="1.6 120 92;-1.6 120 92;1.6 120 92" dur="9s" repeatCount="indefinite"/></path>
+      <path d="M770 92 q6 -52 -6 -84"><animateTransform attributeName="transform" type="rotate" values="-1.6 770 92;1.6 770 92;-1.6 770 92" dur="8.6s" repeatCount="indefinite"/></path>
+      <path d="M836 92 q-6 -48 8 -80"><animateTransform attributeName="transform" type="rotate" values="1.6 836 92;-1.6 836 92;1.6 836 92" dur="7.8s" repeatCount="indefinite"/></path>
+    </g>
+    <line x1="240" y1="34" x2="660" y2="30" stroke="#786c54" stroke-width="2"/>
+    <g id="canvas-sheets" fill="#faf6ea" stroke="#a89876">
+      <polygon points="300,32 380,30 376,84 304,86"><animateTransform attributeName="transform" type="rotate" values="-2 340 32;2 340 32;-2 340 32" dur="7s" repeatCount="indefinite"/></polygon>
+      <polygon points="470,31 550,29 546,82 474,84"><animateTransform attributeName="transform" type="rotate" values="2 510 31;-2 510 31;2 510 31" dur="7.8s" repeatCount="indefinite"/></polygon>
+    </g>
+  </g>
+  <rect id="yard" y="92" width="900" height="128" fill="#d8c8a4"/>
+  <g id="mid-band">
+    <g id="dye-vats">
+      <g><polygon points="180,150 246,150 240,196 186,196" fill="#4a423a"/><ellipse cx="213" cy="150" rx="33" ry="8" fill="#26407c"><animate attributeName="ry" values="8;10.5;8" dur="6s" repeatCount="indefinite"/></ellipse></g>
+      <g><polygon points="286,150 352,150 346,196 292,196" fill="#4a423a"/><ellipse cx="319" cy="150" rx="33" ry="8" fill="#c69434"><animate attributeName="ry" values="10.5;8;10.5" dur="7s" repeatCount="indefinite"/></ellipse></g>
+      <g><polygon points="392,150 458,150 452,196 398,196" fill="#4a423a"/><ellipse cx="425" cy="150" rx="33" ry="8" fill="#a8cac4"><animate attributeName="ry" values="8;11;8" dur="6.6s" repeatCount="indefinite"/></ellipse></g>
+    </g>
+    <g id="gouges" stroke-linecap="round">
+      <line x1="520" y1="168" x2="552" y2="164" stroke="#926838" stroke-width="6"><animateTransform attributeName="transform" type="translate" values="0 0;7 0;0 0" dur="9s" repeatCount="indefinite"/></line>
+      <line x1="566" y1="178" x2="598" y2="174" stroke="#926838" stroke-width="6"><animateTransform attributeName="transform" type="translate" values="0 0;-6 0;0 0" dur="10s" repeatCount="indefinite"/></line>
+      <line x1="612" y1="166" x2="644" y2="162" stroke="#c4c6c8" stroke-width="3.4"><animate attributeName="opacity" values="0.35;1;0.35" dur="4.4s" repeatCount="indefinite"/></line>
+    </g>
+    <g id="charcoal-tin">
+      <polygon points="700,158 776,158 776,198 700,198" fill="#6c7074"/>
+      <line x1="700" y1="158" x2="776" y2="158" stroke="#c69434" stroke-width="3.4"/>
+      <g id="tin-lid">
+        <polygon points="702,156 760,132 782,146 724,168" fill="#7e8286"/>
+        <animateTransform attributeName="transform" type="rotate" values="0 702 156;-13 702 156;0 702 156" dur="11s" repeatCount="indefinite"/>
+      </g>
+      <line x1="722" y1="156" x2="726" y2="128" stroke="#1a1816" stroke-width="7"/>
+      <line x1="748" y1="156" x2="750" y2="122" stroke="#1a1816" stroke-width="7"/>
+    </g>
+  </g>
+  <g id="near-band">
+    <g id="gold-leaf-book-a">
+      <rect x="-190" y="200" width="120" height="13" fill="#d8b254"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;1090 0" dur="26s" repeatCount="indefinite"/>
+    </g>
+    <g id="gold-leaf-book-b">
+      <rect x="-420" y="200" width="120" height="13" fill="#c69434"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;1320 0" dur="26s" begin="13s" repeatCount="indefinite"/>
+    </g>
+    <g id="palette-knives" fill="#b9bcbe">
+      <polygon points="60,214 84,210 84,216 60,218"/><polygon points="300,215 324,211 324,217 300,219"/><polygon points="540,214 564,210 564,216 540,218"/><polygon points="780,215 804,211 804,217 780,219"/>
+    </g>
+  </g>
+</svg>
